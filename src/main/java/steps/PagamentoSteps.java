@@ -4,6 +4,7 @@ import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import pageObjects.PagamentoPage;
 import utils.ContextoSetup;
 
 public class PagamentoSteps {
@@ -16,18 +17,22 @@ public class PagamentoSteps {
 
     @E("^eu efetuo o pagamento$")
     public void euEfetuoOPagamento() throws InterruptedException {
-        Thread.sleep(5000);
+        PagamentoPage pagamentoPage = new PagamentoPage(contextoSetup.driver);
+        pagamentoPage.acessarCarrinho();
+        pagamentoPage.preencherDadosPagamento();
 
-        contextoSetup.driver.findElement(By.xpath("//*[contains(@class,'shopping_cart_link')]")).click();
-        Thread.sleep(5000);
-        contextoSetup.driver.findElement(By.id("checkout")).click();
-
-//        Preenchimento dos dados para pagamento
-        contextoSetup.driver.findElement(By.xpath("//input[@id = 'first-name']")).sendKeys("Samuel");
-        contextoSetup.driver.findElement(By.xpath("//input[@id = 'last-name']")).sendKeys("Leite");
-        contextoSetup.driver.findElement(By.xpath("//input[@id = 'postal-code']")).sendKeys("123456");
-        Thread.sleep(5000);
-        contextoSetup.driver.findElement(By.id("continue")).click();
+//        Thread.sleep(5000);
+//
+//        contextoSetup.driver.findElement(By.xpath("//*[contains(@class,'shopping_cart_link')]")).click();
+//        Thread.sleep(5000);
+//        contextoSetup.driver.findElement(By.id("checkout")).click();
+//
+////        Preenchimento dos dados para pagamento
+//        contextoSetup.driver.findElement(By.xpath("//input[@id = 'first-name']")).sendKeys("Samuel");
+//        contextoSetup.driver.findElement(By.xpath("//input[@id = 'last-name']")).sendKeys("Leite");
+//        contextoSetup.driver.findElement(By.xpath("//input[@id = 'postal-code']")).sendKeys("123456");
+//        Thread.sleep(5000);
+//        contextoSetup.driver.findElement(By.id("continue")).click();
 
         String confirmacaoProduto = contextoSetup.driver.findElement(By.xpath("//*[@class='inventory_item_name']")).getText();
         Assert.assertEquals("Sauce Labs Backpack", confirmacaoProduto);

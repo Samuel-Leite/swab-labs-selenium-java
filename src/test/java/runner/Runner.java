@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "steps",
-        tags = "@wip"
+        tags = "@regressao",
+        plugin = {"html:target/cucumber.html"}
 )
 
 public class Runner {

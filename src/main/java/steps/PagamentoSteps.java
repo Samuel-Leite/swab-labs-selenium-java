@@ -15,7 +15,7 @@ public class PagamentoSteps {
 
     @E("^eu efetuo o pagamento$")
     public void euEfetuoOPagamento() throws InterruptedException {
-        PagamentoPage pagamentoPage = new PagamentoPage(contextoSetup.driver);
+        PagamentoPage pagamentoPage = contextoSetup.gerenciarPO.getPagamentoPage();
         pagamentoPage.acessarCarrinho();
         pagamentoPage.preencherDadosPagamento();
         pagamentoPage.confirmacaoCompra();
@@ -23,7 +23,7 @@ public class PagamentoSteps {
 
     @Então("^eu irei visualizar a mensagem \"([^\"]*)\"$")
     public void eu_irei_visualizar_a_mensagem(String mensagemSucesso) throws InterruptedException {
-        PagamentoPage pagamentoPage = new PagamentoPage(contextoSetup.driver);
+        PagamentoPage pagamentoPage = contextoSetup.gerenciarPO.getPagamentoPage();
         pagamentoPage.validarMensagemPagamento(mensagemSucesso);
     }
 }

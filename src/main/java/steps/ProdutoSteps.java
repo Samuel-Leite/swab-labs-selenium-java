@@ -14,7 +14,7 @@ public class ProdutoSteps {
 
     @Quando("^eu incluo o produto no carrinho$")
     public void euIncluoOProdutoNoCarrinho() throws InterruptedException {
-        ProdutoPage produtoPage = new ProdutoPage(contextoSetup.driver);
+        ProdutoPage produtoPage = contextoSetup.gerenciarPO.getProdutoPage();
         produtoPage.addBackpack();
     }
 }

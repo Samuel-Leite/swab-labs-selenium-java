@@ -1,6 +1,6 @@
 package steps;
 
-import cucumber.api.java.pt.Quando;
+import io.cucumber.java.pt.Quando;
 import pageObjects.ProdutoPage;
 import utils.ContextoSetup;
 

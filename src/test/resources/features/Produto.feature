@@ -23,4 +23,4 @@ Funcionalidade: Comprar um produto
 
   Exemplos:
     | mensagem                  |
-    | Thank you for your order1! |
+    | Thank you for your order! |

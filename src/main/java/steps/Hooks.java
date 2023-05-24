@@ -20,13 +20,23 @@ public class Hooks {
         this.contextoSetup = contextoSetup;
     }
 
-    @After
+    @After(order = 1)
+    public void adicionarPrintSucesso(Scenario scenario) throws IOException {
+        WebDriver driver = contextoSetup.baseTeste.webDriverManager();
+        if(!scenario.isFailed()){
+            File sourcePath = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            byte [] fileContent = FileUtils.readFileToByteArray(sourcePath);
+            scenario.attach(fileContent, "image/png", "name");
+        }
+    }
+
+    @After(order = 0)
     public void posCenario() throws IOException {
         contextoSetup.baseTeste.webDriverManager().quit();
     }
 
     @AfterStep
-    public void adicionarPrint(Scenario scenario) throws IOException {
+    public void adicionarPrintErro(Scenario scenario) throws IOException {
 
         WebDriver driver = contextoSetup.baseTeste.webDriverManager();
         if(scenario.isFailed()){

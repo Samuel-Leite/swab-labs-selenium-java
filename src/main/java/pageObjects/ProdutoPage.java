@@ -16,10 +16,10 @@ public class ProdutoPage {
     By btnVoltarPagina = By.name("back-to-products");
 
     public void addBackpack() throws InterruptedException {
-        Thread.sleep(5000);
-
         driver.findElement(btnProdutoBackpack).click();
+        Thread.sleep(5000);
         driver.findElement(btnAddProduto).click();
+        Thread.sleep(5000);
         driver.findElement(btnVoltarPagina).click();
     }
 }

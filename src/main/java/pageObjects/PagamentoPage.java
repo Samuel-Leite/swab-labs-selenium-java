@@ -51,7 +51,8 @@ public class PagamentoPage {
         driver.findElement(btnContinue).click();
     }
 
-    public void confirmacaoCompra(){
+    public void confirmacaoCompra() throws InterruptedException {
+        Thread.sleep(5000);
         String confirmacaoProduto = driver.findElement(lblProduto).getText();
         Assert.assertEquals("Sauce Labs Backpack", confirmacaoProduto);
 
@@ -64,8 +65,6 @@ public class PagamentoPage {
     public void validarMensagemPagamento(String mensagemSucesso) throws InterruptedException {
         String mensagemPagamento = driver.findElement(lblPagamentoSucesso).getText();
         Assert.assertEquals(mensagemSucesso, mensagemPagamento);
-
         Thread.sleep(5000);
-//        driver.quit();
     }
 }

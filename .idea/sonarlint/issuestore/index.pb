@@ -1,9 +1,7 @@
 
 Z
 *src/main/java/pageObjects/GerenciarPO.java,5\6\5684099beee97eff8beef15c802fd6c94124872a
-Z
-*src/main/java/pageObjects/ProdutoPage.java,3\6\369b57627555e22388361479588c4674a675d4b7
-X
-(src/main/java/pageObjects/LoginPage.java,4\9\490461149aa4161f834841a3fe70bf217a3a694e
-V
-&src/main/java/utils/ContextoSetup.java,b\3\b3cdc690578e248ac29d5dc751241e0531a4a997
+W
+'src/main/java/steps/PagamentoSteps.java,8\a\8ae5c6415dd7a6ddc0d3bb0e9ba3b0da9b963756
+P
+ src/test/java/runner/Runner.java,0\0\00619e8ed3c478baf77146b160d72321ab85b552

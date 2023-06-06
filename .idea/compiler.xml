@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="swag-labs" />
+        <module name="swab-labs-selenium-java" />
       </profile>
     </annotationProcessing>
   </component>
